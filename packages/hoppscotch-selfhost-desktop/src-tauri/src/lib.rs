@@ -82,13 +82,16 @@ pub fn run() {
                 setup_win_window(app);
             }
 
-            let handle_menu = app.handle().clone();
-            let _ = handle_menu.set_menu(menu::build_default(&handle_menu)?);
+            #[cfg(target_os = "macos")]
+            {
+                let handle_menu = app.handle().clone();
+                let _ = handle_menu.set_menu(menu::build_default(&handle_menu)?);
 
-            let window = app.get_webview_window("main").unwrap();
-            app.on_menu_event(move |handle, event| {
-                menu::handle_event(handle.clone(), &window.clone(), &event)
-            });
+                let window = app.get_webview_window("main").unwrap();
+                app.on_menu_event(move |handle, event| {
+                    menu::handle_event(handle.clone(), &window.clone(), &event)
+                });
+            }
 
             app.manage(AppState::new(app.handle()));
 

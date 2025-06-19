@@ -103,7 +103,7 @@
           </p>
         </div>
         <div class="space-y-8 p-8 md:col-span-2">
-          <section>
+          <section v-if="!isLinux">
             <h4 class="font-semibold text-secondaryDark">
               {{ t("settings.background") }}
             </h4>
@@ -182,7 +182,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from "vue"
+import { ref, computed, watch, onMounted } from "vue"
 import { applySetting, toggleSetting } from "~/newstore/settings"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"
@@ -197,6 +197,8 @@ import { platform } from "~/platform"
 
 const t = useI18n()
 const colorMode = useColorMode()
+
+const { isLinux } = platform.platformOS
 
 usePageHead({
   title: computed(() => t("navigation.settings")),

@@ -10,6 +10,7 @@ import { IOPlatformDef } from "./io"
 import { LimitsPlatformDef } from "./limits"
 import { SpotlightPlatformDef } from "./spotlight"
 import { UIPlatformDef } from "./ui"
+import { PlatformOSInfo } from "./os"
 
 export type PlatformDef = {
   ui?: UIPlatformDef
@@ -46,6 +47,7 @@ export type PlatformDef = {
   limits?: LimitsPlatformDef
   infra?: InfraPlatformDef
   experiments?: ExperimentsPlatformDef
+  platformOS: PlatformOSInfo
 }
 
 export let platform: PlatformDef

@@ -285,8 +285,11 @@ pub fn build<R: Runtime>(
 
 #[tauri::command]
 pub fn change_language(app_handle: AppHandle, language: String) -> tauri::Result<()> {
-    let menu = build(&app_handle, &language)?;
-    app_handle.set_menu(menu)?;
+    #[cfg(target_os = "macos")]
+    {
+        let menu = build(&app_handle, &language)?;
+        app_handle.set_menu(menu)?;
+    }
     Ok(())
 }
 
