@@ -101,7 +101,9 @@
     "updated_text": "Postdata has been updated to v{version} 🎉",
     "whats_new": "Шта је ново?",
     "see_whats_new": "See what’s new",
-    "wiki": "Вики"
+    "wiki": "Вики",
+    "report_issue": "Report an Issue…",
+    "about": "About Postdata"
   },
   "auth": {
     "account_exists": "Налог постоји са различитим акредитивима - Пријавите се да бисте повезали оба налога",

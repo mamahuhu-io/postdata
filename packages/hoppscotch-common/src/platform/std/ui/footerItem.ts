@@ -1,6 +1,6 @@
 import { HoppFooterMenuItem } from "../../ui"
 import IconGift from "~icons/lucide/gift"
-import IconActivity from "~icons/lucide/activity"
+import IconMessageCircleCode from "~icons/lucide/message-circle-code"
 
 export const whatsNew: HoppFooterMenuItem = {
   id: "whats-new",
@@ -13,12 +13,12 @@ export const whatsNew: HoppFooterMenuItem = {
 }
 
 export const status: HoppFooterMenuItem = {
-  id: "status",
-  text: (t) => t("app.status"),
-  icon: IconActivity,
+  id: "report-issue",
+  text: (t) => t("app.report_issue"),
+  icon: IconMessageCircleCode,
   action: {
     type: "link",
-    href: "https://mamahuhu.io",
+    href: "https://github.com/mamahuhu-io/postdata/issues/new",
   },
 }
 

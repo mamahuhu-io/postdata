@@ -101,7 +101,9 @@
     "updated_text": "Postdata has been updated to v{version} 🎉",
     "whats_new": "Wat is er nieuw?",
     "see_whats_new": "See what’s new",
-    "wiki": "Wiki"
+    "wiki": "Wiki",
+    "report_issue": "Report an Issue…",
+    "about": "About Postdata"
   },
   "auth": {
     "account_exists": "Account bestaat met verschillende inloggegevens. Log in om beide accounts te koppelen",

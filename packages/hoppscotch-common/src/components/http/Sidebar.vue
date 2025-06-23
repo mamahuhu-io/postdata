@@ -26,13 +26,13 @@
     >
       <History :page="'rest'" />
     </HoppSmartTab>
-    <HoppSmartTab
+    <!-- <HoppSmartTab
       :id="'share-request'"
       :icon="IconShare2"
       :label="`${t('tab.shared_requests')}`"
     >
       <Share />
-    </HoppSmartTab>
+    </HoppSmartTab> -->
     <HoppSmartTab
       :id="'codegen'"
       :icon="IconCode"
@@ -58,7 +58,7 @@
 import IconClock from "~icons/lucide/clock"
 import IconLayers from "~icons/lucide/layers"
 import IconFolder from "~icons/lucide/folder"
-import IconShare2 from "~icons/lucide/share-2"
+// import IconShare2 from "~icons/lucide/share-2"
 import IconCode from "~icons/lucide/code"
 import { ref } from "vue"
 import { useI18n } from "@composables/i18n"

@@ -5,7 +5,7 @@
       interactive
       trigger="click"
       theme="popover"
-      hide-on-click="toggle"
+      :hide-on-click="true"
     >
       <HoppButtonSecondary
         v-tippy="{ theme: 'tooltip' }"

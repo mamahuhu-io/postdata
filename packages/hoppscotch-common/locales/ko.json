@@ -101,7 +101,9 @@
     "updated_text": "Postdata has been updated to v{version} 🎉",
     "whats_new": "새로 바뀐 점",
     "see_whats_new": "See what’s new",
-    "wiki": "위키"
+    "wiki": "위키",
+    "report_issue": "Report an Issue…",
+    "about": "About Postdata"
   },
   "auth": {
     "account_exists": "계정이 다른 자격 증명으로 존재합니다. 두 계정을 연결하려면 로그인하세요.",

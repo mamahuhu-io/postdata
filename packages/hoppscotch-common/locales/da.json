@@ -101,7 +101,9 @@
     "updated_text": "Postdata er blevet opdateret til v{version} 🎉",
     "whats_new": "Hvad er nyt?",
     "see_whats_new": "Se hvad der er nyt",
-    "wiki": "Wiki"
+    "wiki": "Wiki",
+    "report_issue": "Report an Issue…",
+    "about": "About Postdata"
   },
   "auth": {
     "account_exists": "Konto eksisterer med andre legitimationsoplysninger - Log ind for at forbinde begge konti",

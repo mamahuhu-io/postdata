@@ -182,7 +182,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted } from "vue"
+import { ref, computed, watch } from "vue"
 import { applySetting, toggleSetting } from "~/newstore/settings"
 import { useSetting } from "@composables/settings"
 import { useI18n } from "@composables/i18n"

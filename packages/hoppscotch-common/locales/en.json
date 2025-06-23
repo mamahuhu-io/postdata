@@ -135,7 +135,9 @@
     "whats_new": "What's new?",
     "see_whats_new": "See what’s new",
     "wiki": "Wiki",
-    "default": "default: {value}"
+    "default": "default: {value}",
+    "report_issue": "Report an Issue…",
+    "about": "About Postdata"
   },
   "auth": {
     "account_exists": "Account exists with different credential - Login to link both accounts",

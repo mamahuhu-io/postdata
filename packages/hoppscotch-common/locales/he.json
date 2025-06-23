@@ -101,7 +101,9 @@
     "updated_text": "Postdata has been updated to v{version} 🎉",
     "whats_new": "מה חדש?",
     "see_whats_new": "See what’s new",
-    "wiki": "ויקי"
+    "wiki": "ויקי",
+    "report_issue": "Report an Issue…",
+    "about": "About Postdata"
   },
   "auth": {
     "account_exists": "החשבון קיים עם אישורים שונים - התחבר לקישור שני החשבונות",

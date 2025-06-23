@@ -101,7 +101,9 @@
     "updated_text": "Postdata 已更新至 v{version} 🎉",
     "whats_new": "新增内容",
     "see_whats_new": "查看更新内容",
-    "wiki": "帮助"
+    "wiki": "帮助",
+    "report_issue": "报告问题…",
+    "about": "关于 Postdata"
   },
   "auth": {
     "account_exists": "当前帐号已存在 - 登录以链接两个帐号",

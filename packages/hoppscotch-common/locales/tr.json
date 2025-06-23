@@ -101,7 +101,9 @@
     "updated_text": "Postdata has been updated to v{version} 🎉",
     "whats_new": "Ne var ne yok?",
     "see_whats_new": "See what’s new",
-    "wiki": "Wiki"
+    "wiki": "Wiki",
+    "report_issue": "Report an Issue…",
+    "about": "About Postdata"
   },
   "auth": {
     "account_exists": "Farklı kimlik bilgilerine sahip hesap var - Her iki hesabı birbirine bağlamak için giriş yapın",

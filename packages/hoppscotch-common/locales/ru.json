@@ -101,7 +101,9 @@
     "updated_text": "Postdata был обновлен до v{version} 🎉",
     "whats_new": "Что нового?",
     "see_whats_new": "Узнать что нового",
-    "wiki": "Узнать больше"
+    "wiki": "Узнать больше",
+    "report_issue": "Report an Issue…",
+    "about": "About Postdata"
   },
   "auth": {
     "account_exists": "Учетная запись существует с разными учетными данными - войдите, чтобы связать обе учетные записи",

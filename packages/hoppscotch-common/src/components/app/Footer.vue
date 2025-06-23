@@ -46,9 +46,21 @@
               tabindex="0"
               @keyup.d="documentation!.$el.click()"
               @keyup.s="shortcuts!.$el.click()"
-              @keyup.c="chat!.$el.click()"
+              @keyup.a="about!.$el.click()"
               @keyup.escape="hide()"
             >
+              <HoppSmartItem
+                ref="about"
+                :icon="IconBook"
+                :label="`${t('app.about')}`"
+                :shortcut="['A']"
+                @click="
+                  () => {
+                    emit('menu://global/about')
+                    hide()
+                  }
+                "
+              />
               <HoppSmartItem
                 ref="documentation"
                 :icon="IconBook"
@@ -205,6 +217,7 @@ import { TippyComponent } from "vue-tippy"
 import { getPlatformSpecialKey as getSpecialKey } from "~/helpers/platformutils"
 import { invokeAction } from "@helpers/actions"
 import { HoppSmartItem } from "@hoppscotch/ui"
+import { emit } from "@tauri-apps/api/event"
 
 const t = useI18n()
 
@@ -234,5 +247,5 @@ const nativeShare = () => {
 const tippyActions = ref<TippyComponent | null>(null)
 const documentation = ref<typeof HoppSmartItem>()
 const shortcuts = ref<typeof HoppSmartItem>()
-const chat = ref<typeof HoppSmartItem>()
+const about = ref<typeof HoppSmartItem>()
 </script>

@@ -101,7 +101,9 @@
     "updated_text": "Postdata has been updated to v{version} 🎉",
     "whats_new": "新功能",
     "see_whats_new": "See what’s new",
-    "wiki": "維基"
+    "wiki": "維基",
+    "report_issue": "Report an Issue…",
+    "about": "About Postdata"
   },
   "auth": {
     "account_exists": "帳號存在不同的憑證 - 登入後可連結兩個帳號",

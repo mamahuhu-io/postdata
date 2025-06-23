@@ -131,7 +131,9 @@
     "whats_new": "Was gibt's Neues?",
     "see_whats_new": "Sieh dir an, was neu ist",
     "wiki": "Wiki",
-    "default": "standard: {value}"
+    "default": "standard: {value}",
+    "report_issue": "Report an Issue…",
+    "about": "About Postdata"
   },
   "auth": {
     "account_exists": "Konto existiert mit unterschiedlichen Zugangsdaten - Melde Dich an, um beide Konten zu verknüpfen",

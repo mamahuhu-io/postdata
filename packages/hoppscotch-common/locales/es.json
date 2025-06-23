@@ -101,7 +101,9 @@
     "updated_text": "Postdata has been updated to v{version} 🎉",
     "whats_new": "¿Qué hay de nuevo?",
     "see_whats_new": "Novedades",
-    "wiki": "Wiki"
+    "wiki": "Wiki",
+    "report_issue": "Reportar un problema…",
+    "about": "Acerca de Postdata"
   },
   "auth": {
     "account_exists": "La cuenta existe con una credencial diferente - Inicia sesión para vincular ambas cuentas",
