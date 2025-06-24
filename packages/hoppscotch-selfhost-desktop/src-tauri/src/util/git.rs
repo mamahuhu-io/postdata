@@ -159,7 +159,7 @@ pub fn git_push(repo_path: String) -> Result<GitOperationStatus, String> {
         return Ok(GitOperationStatus::NoRemoteConfigured);
     }
 
-    if has_unpushed_commits_sync(repo_path)? {
+    if !has_unpushed_commits_sync(repo_path)? {
         return Ok(GitOperationStatus::UnPushedChanges);
     }
 
