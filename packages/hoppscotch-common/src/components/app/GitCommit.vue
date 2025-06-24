@@ -113,7 +113,10 @@ const commitSync = async () => {
   }
   try {
     await gitPull()
-  } catch (error) {}
+  } catch (error) {
+    toast.error(String(error))
+    return false
+  }
   await gitCommit(commitMessage.value)
   return true
 }

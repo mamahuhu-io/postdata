@@ -441,6 +441,10 @@ const push = () => {
               )
               loadingState.value = false
               return
+            } else if (res === GResultEnum.UnPushedChanges) {
+              toast.error("Unpushed changes. Please pull before pushing.")
+              loadingState.value = false
+              return
             }
             toast.success(`${t("git.push_success_message")}`)
             loadingState.value = false

@@ -27,6 +27,7 @@ export enum GResultEnum {
   UncommittedChanges = "UncommittedChanges",
   AlreadyUpToDate = "AlreadyUpToDate",
   NoRemoteConfigured = "NoRemoteConfigured",
+  UnPushedChanges = "UnPushedChanges",
 }
 export interface GResult<T> {
   status: GResultEnum
