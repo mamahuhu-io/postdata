@@ -1,0 +1,23 @@
+{
+  "version": "0.10.202",
+  "notes": "See the assets to download this version and install.",
+  "pub_date": "2025-01-18T16:23:04.860Z",
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRVXVWTENVb1pUZ2VPNmIxQXdic3dLZTFtV2xSZWtFS1JJVU81c25VYytnZ3dzb3IvZUJ4VWV2elB6bE1qRkwyemxMMHl0N0NocU12ZTR1TzBUdExDTVVKNHdDekh4MWdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzM3MjE2NzQ0CWZpbGU6UG9zdGRhdGEuYXBwLnRhci5negp6UytVRlhOZTVNcWxNTzRoVk1xNTFUOHlrMkZRMmpMbUJHWVNacGpTd3hzOGFYTjQvQWcvdnp0RnlOci8zc2RXUGhDTy9kSGFQb24vM2tBYWtKY3BDZz09Cg==",
+      "url": "https://github.com/mamahuhu-io/postdata/releases/download/v0.10.202/Postdata_aarch64.app.tar.gz"
+    },
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRVXVWTENVb1pUZ1ZtdkMwejczTm9CaDB5TE1mc2NzVnpkYm9MWlZ3aHhPaHo5NldzcHIvaWN5VmVWWWlpYXRzaWtKeG5uK2RRbHNFVnJVd1d0NFVZK1lXaEkzZnRJc1FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzM3MjE2NzU0CWZpbGU6UG9zdGRhdGEuYXBwLnRhci5nego4VGQ0eEN5Q0thUXhlS3ZoQjVDT3NyYUlsUHUzcVBaUFNnbVk0ZjhpT2dhWmJaRENWVWErR0tOY1Z0bDVXVEVORUZHWWxkQnBkbmdRendYeHc3OURBQT09Cg==",
+      "url": "https://github.com/mamahuhu-io/postdata/releases/download/v0.10.202/Postdata_x64.app.tar.gz"
+    },
+    "linux-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRVXVWTENVb1pUZ1dTMFJpR2EzM0RHRlllRE1KUXIrSFhHOXBTOFFublg0M3dVRnNPYVpGNG1JeUFzdUVMeDd4cm9NOTdIOFh4blNnOWtGcnRtNWpYMm8zdmFzZ00vbXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzM3MjE2ODg2CWZpbGU6UG9zdGRhdGFfMC4xMC4yMDBfYW1kNjQuQXBwSW1hZ2UKVzhaZW11VnhhUU9UUlE3dGxZSEZpaDZLbFRNRThPK0NBTHhLY2tuKzlBSkx0Uy9wUWwxNzVxNWNzM0JzZjVydUY4QkRrbkRISCtxeHdOR1NyckpOQnc9PQo=",
+      "url": "https://github.com/mamahuhu-io/postdata/releases/download/v0.10.202/Postdata_0.10.202_amd64.AppImage"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRVXVWTENVb1pUZ1N2NlI3NWhXVU41UnNPRUY1djMxbVFmdkk3V05YMjZ5dWdsQzZHT1JhaFlJaUp0REMrT0J3UENFbWxJVEdhSzdvUXpVVm95bE42NmxUSE0rdU43MUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzM3MjE3MzgxCWZpbGU6UG9zdGRhdGFfMC4xMC4yMDBfeDY0X2VuLVVTLm1zaQphSWpyVHRXUjJaVVFzREY1MU1ySFozQjZtdmkwUlRVZ1d6U1A3bS9PREtkTFNsaWtUandwRUZhYzJQcm4rSnp1MU5tV1dUdFpFR3c2S1NjcW8xYlJEZz09Cg==",
+      "url": "https://github.com/mamahuhu-io/postdata/releases/download/v0.10.202/Postdata_0.10.202_x64_en-US.msi"
+    }
+  }
+}
