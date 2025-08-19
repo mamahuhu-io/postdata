@@ -184,14 +184,14 @@
       @init="checkGitStatus"
       @init-git-branches="initGitBranches"
     />
-    <SmartGitCommit
-      :show="showModalCommit"
-      @close="showModalCommit = false"
-      @init="checkGitStatus"
-    />
     <SmartGitNewBranch
       :show="showNewBranch"
       @hide-modal="showNewBranch = false"
+      @init="checkGitStatus"
+    />
+    <SmartGitConflicts
+      :show="showModalConflicts"
+      @hide-modal="showModalConflicts = false"
       @init="checkGitStatus"
     />
   </span>
@@ -202,13 +202,14 @@ import { ref } from "vue"
 import { useI18n } from "@composables/i18n"
 import { HoppButtonPrimary } from "@mamahuhu/ui"
 import { useToast } from "~/composables/toast"
-import { invokeAction } from "@helpers/actions"
+import { invokeAction, defineActionHandler } from "@helpers/actions"
 import {
   listGitBranches,
   gitInit,
   gitCheckout,
   gitPull,
-  gitPush,
+  pullWithAble,
+  pushWithConflict,
   GResultEnum,
   BranchInfo,
   gitCheckStatus,
@@ -235,8 +236,8 @@ const isGitDir = ref(false)
 const hasRemoteUrl = ref(false)
 const showModalClone = ref(false)
 const showModalDefineRemote = ref(false)
-const showModalCommit = ref(false)
 const showNewBranch = ref(false)
+const showModalConflicts = ref(false)
 const loadingStateGitSync = ref(false)
 const loadingState = ref(false)
 const isGitInstalled = ref(true)
@@ -246,10 +247,14 @@ const sync = () => {
     loadingStateGitSync.value = true
     gitSync(`${t("git.default_commit_message")}`, true)
       .then((result) => {
-        toast.success(result.status)
-        checkGitStatus()
-        initGitBranches()
-        persistenceService.setupLocalPersistence()
+        if (result.status === GResultEnum.Success) {
+          toast.success(result.status)
+          checkGitStatus()
+          initGitBranches()
+          persistenceService.setupLocalPersistence()
+        } else if (result.status === GResultEnum.MergeConflict) {
+          showModalConflicts.value = true
+        }
         loadingStateGitSync.value = false
       })
       .catch((error) => {
@@ -358,10 +363,15 @@ const formatBranchName = (val: string) => {
 
 const pull = () => {
   loadingState.value = true
-  gitPull()
+  pullWithAble()
     .then((result) => {
-      toast.success(result)
-      initGitBranches()
+      // toast.success(JSON.stringify(result))
+      if (result.status === GResultEnum.Success) {
+        toast.success(result.result)
+        initGitBranches()
+      } else if (result.status === GResultEnum.MergeConflict) {
+        showModalConflicts.value = true
+      }
       loadingState.value = false
     })
     .catch((error) => {
@@ -373,11 +383,19 @@ const pull = () => {
 
 const push = () => {
   loadingState.value = true
-  gitPush()
+  pushWithConflict(false)
     .then((result) => {
       console.log("gitPush", result)
-      toast.success(result)
-      initGitBranches()
+      if (result.status === GResultEnum.Success) {
+        toast.success(result.result)
+        initGitBranches()
+      } else if (result.status === GResultEnum.MergeConflict) {
+        showModalConflicts.value = true
+      } else if (result.status === GResultEnum.RemoteAHead) {
+        toast.info(
+          "Local is lagging behind remote. Please update before pushing!"
+        )
+      }
       loadingState.value = false
     })
     .catch((error) => {
@@ -395,6 +413,10 @@ const showCommit = () => {
   invokeAction("flyouts.git-commit.toggle")
 }
 
+const showConflicts = () => {
+  showModalConflicts.value = true
+}
+
 const gitClone = () => {
   showModalClone.value = true
 }
@@ -406,6 +428,15 @@ const newBranch = () => {
 const gitDefineRemote = () => {
   showModalDefineRemote.value = true
 }
+
+defineActionHandler("git-extension.show-conflicts", () => {
+  showConflicts()
+})
+defineActionHandler("git-extension.init-extension-data", () => {
+  toast.info("git-extension.init-extension-data")
+  checkGitStatus()
+  persistenceService.setupLocalPersistence()
+})
 
 const tippyActions = ref<TippyComponent | null>(null)
 </script>

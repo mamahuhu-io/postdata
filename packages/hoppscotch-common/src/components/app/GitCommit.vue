@@ -36,7 +36,7 @@
         style="min-width: 200px; margin-top: 20px"
       >
         <div class="pb-2 pl-4 text-sm font-bold text-secondaryLight">
-          The last 10 commit times
+          The last 15 commit times
         </div>
 
         <HoppSmartItem
@@ -60,8 +60,10 @@ import {
   listGitCommitHistory,
   CommitInfo,
   gitSync,
+  GResultEnum,
 } from "@helpers/git"
 import IconGitVommitVertical from "~icons/lucide/git-commit-vertical"
+import { invokeAction } from "@helpers/actions"
 
 const t = useI18n()
 const toast = useToast()
@@ -85,9 +87,9 @@ watch(
 )
 
 const init = () => {
-  listGitCommitHistory(20)
+  listGitCommitHistory(15)
     .then((result) => {
-      console.log(result)
+      // console.log(result)
       commitHistorys.value = result
     })
     .catch((error) => {
@@ -123,6 +125,9 @@ const commit = () => {
         toast.error(error)
         loadingStateCommit.value = false
       })
+      .finally(() => {
+        invokeAction("git-extension.init-extension-data")
+      })
   })()
 }
 
@@ -133,17 +138,28 @@ const gitCommitAndPush = () => {
       loadingStateCommitAndPush.value = false
       return
     }
-    gitSync(`${t("git.default_commit_message")}`, false)
-      .then(() => {
-        toast.success(`${t("git.commit_push_success_message")}`)
-        init()
-        loadingStateCommitAndPush.value = false
+    gitSync(commitMessage.value, false)
+      .then((result) => {
+        if (result.status === GResultEnum.Success) {
+          toast.success(result.result)
+        } else if (result.status === GResultEnum.MergeConflict) {
+          toast.info(result.status)
+          invokeAction("git-extension.show-conflicts")
+        }
       })
       .catch((error) => {
         toast.error(error)
+      })
+      .finally(() => {
         loadingStateCommitAndPush.value = false
+        init()
+        invokeAction("git-extension.init-extension-data")
       })
   })()
+}
+
+const close = () => {
+  invokeAction("flyouts.git-commit.toggle")
 }
 
 const formatLabel = (commit: CommitInfo) => {
@@ -152,14 +168,6 @@ const formatLabel = (commit: CommitInfo) => {
 
 const formatTitle = (commit: CommitInfo) => {
   return `commitId: ${commit.hash}\n\nmessage: ${commit.message}\n\ndate: ${commit.date}\n\nauthor: ${commit.author}`
-}
-
-const emit = defineEmits<{
-  (e: "close"): void
-}>()
-
-const close = () => {
-  emit("close")
 }
 </script>
 

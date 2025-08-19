@@ -1,6 +1,6 @@
 [package]
 name = "postdata-desktop"
-version = "0.10.202"
+version = "0.11.01"
 description = "Postdata is a Git-integrated, fully offline, and open-source API client"
 authors = ["Steven <steven@postdata.cn>"]
 edition = "2021"
@@ -45,6 +45,7 @@ open = "5.3.2"
 tracing = "0.1"
 tracing-subscriber = "0.3"
 dotenv = "0.15"
+chrono = "0.4.41"
 
 [target.'cfg(target_os = "macos")'.dependencies]
 cocoa = "0.26.0"

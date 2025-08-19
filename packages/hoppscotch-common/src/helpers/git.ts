@@ -31,6 +31,9 @@ export enum GResultEnum {
   GitNotInstalled = "GitNotInstalled",
   GitVersionTooLow = "GitVersionTooLow",
   NotGitRepository = "NotGitRepository",
+  MergeConflict = "MergeConflict",
+  RemoteChanges = "RemoteChanges",
+  RemoteAHead = "RemoteAHead",
 }
 export interface GResult<T> {
   status: GResultEnum
@@ -69,9 +72,10 @@ export const gitPull = async () => {
   })
 }
 
-export const gitPush = async () => {
+export const gitPush = async (isForce: boolean) => {
   return await invoke<string>("git_push", {
     path: getDataPath(),
+    isForce: isForce,
   })
 }
 
@@ -137,6 +141,28 @@ export const gitNewBranch = async (branchName: string) => {
 
 export const gitCheckStatus = async () => {
   return await invoke<string>("git_check_status", {
+    path: getDataPath(),
+  })
+}
+
+export const resolveConflicts = async (
+  strategy: "Local" | "Remote" | "Manual"
+) => {
+  return await invoke<string>("git_resolve_conflicts", {
+    path: getDataPath(),
+    strategy: strategy,
+  })
+}
+
+export const pushWithConflict = async (isForce: boolean) => {
+  return await invoke<GResult<string>>("git_push_with_conflict", {
+    path: getDataPath(),
+    isForce: isForce,
+  })
+}
+
+export const pullWithAble = async () => {
+  return await invoke<GResult<string>>("git_pull_with_able", {
     path: getDataPath(),
   })
 }

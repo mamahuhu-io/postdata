@@ -65,3 +65,31 @@ fn copy_directory_recursive(src: &Path, dst: &Path) -> io::Result<()> {
     }
     Ok(())
 }
+
+/// copy files to directory
+pub fn copy_files(path: &Path, dst: &Path, files: Vec<String>) -> io::Result<()> {
+    if files.is_empty() {
+        return Ok(());
+    }
+
+    // generate timestamp directory
+    // let current_dir = Path::new(path);
+    // let backup_dir = current_dir.join("backup");
+    // let timestamp = Local::now().format("%Y%m%d%H%M%S").to_string();
+    // let backup_dir = Path::new(dst);
+
+    for file in files {
+        let src_path = path.join(&file);
+        let dest_path = dst.join(&file);
+
+        // create parent directory
+        if let Some(parent) = dest_path.parent() {
+            fs::create_dir_all(parent)?;
+        }
+
+        // copy file
+        fs::copy(src_path, &dest_path)?;
+    }
+
+    Ok(())
+}

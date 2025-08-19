@@ -229,6 +229,7 @@ declare module '@vue/runtime-core' {
     SmartEncodingPicker: typeof import('./components/smart/EncodingPicker.vue')['default']
     SmartEnvInput: typeof import('./components/smart/EnvInput.vue')['default']
     SmartGitClone: typeof import('./components/smart/GitClone.vue')['default']
+    SmartGitConflicts: typeof import('./components/smart/GitConflicts.vue')['default']
     SmartGitDefineRemote: typeof import('./components/smart/GitDefineRemote.vue')['default']
     SmartGitExtension: typeof import('./components/smart/GitExtension.vue')['default']
     SmartGitNewBranch: typeof import('./components/smart/GitNewBranch.vue')['default']
